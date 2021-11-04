@@ -5,7 +5,6 @@ const buildCss = async (srcDir, destDir) => {
     const destFile = path.join(destDir,'bundle.css');
 
     const cssFiles = await readdir(srcDir,{withFileTypes: true});
-    // console.log(cssFiles);
     let data = '';
     for (let file of cssFiles){
         if (file.isFile()){
