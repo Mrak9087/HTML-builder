@@ -1,9 +1,9 @@
 const path = require('path');
-const {mkdir, rmdir, readdir, copyFile} = require('fs/promises');
+const {mkdir, rm, readdir, copyFile} = require('fs/promises');
 
 
 const recreateDir = async (path) => {
-    await rmdir(path,{recursive:true});
+    await rm(path,{force:true,recursive:true});
     await mkdir(path,{recursive:true});
 }
 

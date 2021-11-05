@@ -1,11 +1,11 @@
 const path = require('path');
-const {mkdir, rmdir, readdir, copyFile, readFile, writeFile} = require('fs/promises');
+const {mkdir, rm, readdir, copyFile, readFile, writeFile} = require('fs/promises');
 
 
 const templateReg = /{{[a-zA-X0-9]+}}/g;
 
 const recreateDir = async (path) => {
-    await rmdir(path,{recursive:true});
+    await rm(path,{force:true,recursive:true});
     await mkdir(path,{recursive:true});
 }
 
