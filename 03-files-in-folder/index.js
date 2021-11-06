@@ -14,7 +14,7 @@ const  showFilesInformation = async (pathDir) => {
                 const ext = path.extname(file.name);
                 const flName = path.basename(file.name,ext);
                 const fileSize = fileInfo.size;
-                console.log(`${flName} - ${ext.slice(1)} - ${fileSize}b`);
+                console.log(`${flName} - ${ext.slice(1)} - ${fileSize} bytes`);
             }
             
         }
