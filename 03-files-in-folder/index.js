@@ -7,9 +7,8 @@ const  showFilesInformation = async (pathDir) => {
     try {
         const files = await readdir(pathDir,{withFileTypes: true});
         for (const file of files){
-            if (file.isDirectory()){
-                await showFilesInformation(path.join(pathDir,file.name))
-            }else{
+            if (file.isFile()){
+                
                 const fileInfo = await stat(path.join(pathDir,file.name));
                 const ext = path.extname(file.name);
                 const flName = path.basename(file.name,ext);
