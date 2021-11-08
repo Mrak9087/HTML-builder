@@ -13,6 +13,7 @@ stdout.write('Enter text. For close enter "exit" or press CTRL+C\n');
 const closeScript = () =>{
     writeStream.end();
     rl.close();
+    stdout.write('Goodbuy!');
 }
 
 rl.on('line', (data) =>{
