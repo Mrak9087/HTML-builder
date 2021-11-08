@@ -32,10 +32,11 @@ const buildCss = async (srcDir, destDir) => {
         if (file.isFile()){
             if (path.extname(file.name).slice(1) === 'css'){
                 data += await readFile(path.join(srcDir,file.name));
+                data += '\n';
             }
         }
     }
-    await writeFile(destFile, data);
+    await writeFile(destFile, data.slice(0,-1));
 }
 
 const buildHTML = async (srcTemplate, destDir) => {
